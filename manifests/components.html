@@ -509,7 +509,7 @@
 <header>
   <div class="wrap">
     <h1>Components Manifest</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><span class="filter-pill ok" aria-disabled="true">8 components ok</span><a class="filter-pill info" data-k="infos" href="#filter-infos">3/8 infos</a><span class="filter-pill ok" aria-disabled="true">41 stories ok</span></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><span class="filter-pill ok" aria-disabled="true">9 components ok</span><a class="filter-pill info" data-k="infos" href="#filter-infos">6/9 infos</a><span class="filter-pill ok" aria-disabled="true">23 stories ok</span></div>
   </div>
 </header>
 <main>
@@ -519,46 +519,59 @@
 <article
   class="card 
   no-error 
-  no-info 
+  has-info 
   no-story-error"
   role="listitem"
-  aria-label="Button">
+  aria-label="AuthCard">
   <div class="head">
     <div class="title">
-      <h2><span class="status-dot dot-ok"></span> Button</h2>
+      <h2><span class="status-dot dot-ok"></span> AuthCard</h2>
       <div class="badges">
-        <label for="c-0-components-buttons-altbutton-props" class="badge ok as-toggle">2 prop types</label>
-        
-        <label for="c-0-components-buttons-altbutton-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-0-docs-overview-use-cases-authcard-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-0-docs-overview-use-cases-authcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-0-docs-overview-use-cases-authcard-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
-    <div class="meta" title="./src/stories/components/buttons/AltButton.stories.tsx">components-buttons-altbutton · ./src/stories/components/buttons/AltButton.stories.tsx</div>
+    <div class="meta" title="./src/stories/use-cases/AuthCard.stories.tsx">docs-overview-use-cases-authcard · ./src/stories/use-cases/AuthCard.stories.tsx</div>
     
-    <div class="hint">Button component implementing the Hanout.cc design system. ## Figma Design Based on the Figma design specifications with 5 variants, 4 sizes, and 4 states. ## Variants - **Primary**: Main action button with brand navy color - **Secondary**: Secondary action button with brand gold color - **Ghost**: Minimal style for tertiary actions - **Error**: Destructive actions (delete, remove, etc.) - **Outline**: Secondary actions with border ## Sizes - **Mini** (h-7): Extra small button - **Small** (h-8): Small button - **Medium** (h-9): Default size - **Large** (h-10): Large button ## States - **Default**: Normal resting state - **Hover &amp; Active**: Interactive feedback - **Focus**: Keyboard navigation state with ring - **Disabled**: Non-interactive state ## Icons Supports Lucide icons on the left, right, or both sides of text.</div>
+    
     
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  
-  <input id="c-0-components-buttons-altbutton-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-0-components-buttons-altbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-0-docs-overview-use-cases-authcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-0-docs-overview-use-cases-authcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-0-docs-overview-use-cases-authcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
     
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
     
         <div class="panel panel-props">
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">2 prop types</span>
+              <span class="badge ok">5 prop types</span>
             </div>
-            <pre><code>Component: src/packages/ui/Button.tsx::default</code></pre>
+            <pre><code>Component: src/packages/ui/AuthCard.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>prefixIcon?: keyof typeof Icons
+            <pre><code>onGoogleSignIn: () =&gt; void
 
-suffixIcon?: keyof typeof Icons</code></pre>
+onRequestOTP: (phone: string, code: string) =&gt; Promise&lt;void&gt;
+
+onSignIn: (email: string, password: string) =&gt; void
+
+onSignInWithPhone: (phone: string, code: string, otp: string) =&gt; void
+
+onSignUp: (email: string, password: string) =&gt; void</code></pre>
           </div>
         </div>
     
@@ -570,23 +583,27 @@ suffixIcon?: keyof typeof Icons</code></pre>
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { Button } from "app.hanout.cc";</code></pre>
+                <pre><code>import { AuthCard } from "app.hanout.cc";</code></pre>
               </div>
           
           
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">Playground</span>
+                <span class="ex-name">Primary</span>
                 <span class="badge ok">story ok</span>
               </div>
               
-              <div class="hint">Interactive playground to test all button configurations. Use the controls panel to customize variant, size, icons, and states.</div>
-              <pre><code>const Playground = () =&gt; &lt;Button
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    prefixIcon={undefined}
-    suffixIcon={undefined}
-    disabled={false}&gt;Button Text&lt;/Button&gt;;</code></pre>
+              
+              <pre><code>const Primary = () =&gt; {
+    return (
+        &lt;AuthCard
+            onSignIn={() =&gt; { }}
+            onSignUp={() =&gt; { }}
+            onGoogleSignIn={() =&gt; { }}
+            onRequestOTP={async () =&gt; { }}
+            onSignInWithPhone={() =&gt; { }} /&gt;
+    );
+};</code></pre>
             </div>
         </div>
   </div>
@@ -602,9 +619,9 @@ suffixIcon?: keyof typeof Icons</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">4 prop types</label>
         
-        <label for="c-1-components-buttons-button-stories" class="badge ok as-toggle">26 stories</label>
+        <label for="c-1-components-buttons-button-stories" class="badge ok as-toggle">3 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/buttons/Button.stories.tsx">components-buttons-button · ./src/stories/components/buttons/Button.stories.tsx</div>
@@ -627,11 +644,17 @@ suffixIcon?: keyof typeof Icons</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">1 prop type</span>
+              <span class="badge ok">4 prop types</span>
             </div>
-            <pre><code>Component: src/components/ui/button.tsx::Button</code></pre>
+            <pre><code>Component: src/packages/ui/Button.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>asChild?: boolean = false</code></pre>
+            <pre><code>prefixIcon?: keyof typeof Icons
+
+size?: &quot;default&quot; | &quot;sm&quot; | &quot;lg&quot; | &quot;icon&quot; | &quot;icon-sm&quot; | &quot;icon-lg&quot;
+
+suffixIcon?: keyof typeof Icons
+
+variant?: &quot;link&quot; | &quot;secondary&quot; | &quot;ghost&quot; | &quot;outline&quot; | &quot;destructive&quot; | &quot;default&quot;</code></pre>
           </div>
         </div>
     
@@ -643,372 +666,39 @@ suffixIcon?: keyof typeof Icons</code></pre>
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { Button } from "app.hanout.cc";
-import * as LucideIcons from "lucide-react";</code></pre>
+                <pre><code>import { Button } from "app.hanout.cc";</code></pre>
               </div>
           
           
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Playground</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Interactive playground to test all button configurations. Use the controls panel to customize variant, size, icons, and states.</div>
-              <pre><code>const Playground = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    state=&quot;default&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;
-    disabled={false}&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
-            </div>
             <div class="note ok">
               <div class="row">
                 <span class="ex-name">Primary</span>
                 <span class="badge ok">story ok</span>
               </div>
               
-              <div class="hint">Primary button - Main actions (submit, confirm, save) Figma State: Default</div>
+              <div class="hint">Interactive playground to test all button configurations. Use the controls panel to customize variant, size, icons, and states.</div>
               <pre><code>const Primary = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
+    variant=&quot;default&quot;
+    size=&quot;default&quot;
+    prefixIcon={undefined}
+    suffixIcon={undefined}
+    disabled={false}&gt;Button Text&lt;/Button&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">Secondary</span>
+                <span class="ex-name">ButtonGroups</span>
                 <span class="badge ok">story ok</span>
               </div>
               
-              <div class="hint">Secondary button - Alternative actions with brand gold color Figma State: Default</div>
-              <pre><code>const Secondary = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;secondary&quot;
-    size=&quot;medium&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Ghost</span>
-                <span class="badge ok">story ok</span>
-              </div>
               
-              <div class="hint">Ghost button - Minimal style for tertiary actions Figma State: Default</div>
-              <pre><code>const Ghost = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;ghost&quot;
-    size=&quot;medium&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Error</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Error button - Destructive actions (delete, remove, cancel) Figma State: Default</div>
-              <pre><code>const Error = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;error&quot;
-    size=&quot;medium&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Outline</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Outline button - Secondary actions with border Figma State: Default</div>
-              <pre><code>const Outline = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;outline&quot;
-    size=&quot;medium&quot;
-    iconLeft=&quot;none&quot;
-    iconRight=&quot;none&quot;&gt;
-    {getIcon(iconLeft as string)}
-    {children}
-    {getIcon(iconRight as string)}
-&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Mini</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Mini size button (h-7, text-xs) Figma Size: Mini</div>
-              <pre><code>const Mini = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;primary&quot; size=&quot;mini&quot;&gt;Mini Button&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Small</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Small size button (h-8, text-sm) Figma Size: Small</div>
-              <pre><code>const Small = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;primary&quot; size=&quot;small&quot;&gt;Small Button&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Medium</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Medium size button (h-9, text-sm) - Default Figma Size: Medium</div>
-              <pre><code>const Medium = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;primary&quot; size=&quot;medium&quot;&gt;Medium Button&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Large</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Large size button (h-10, text-base) Figma Size: Large</div>
-              <pre><code>const Large = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;primary&quot; size=&quot;large&quot;&gt;Large Button&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">StateDefault</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Default state - Normal resting state Figma State: Default</div>
-              <pre><code>const StateDefault = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    state=&quot;default&quot;&gt;Default State&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">StateHoverActive</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Hover &amp; Active state - Combined interactive feedback state Figma State: Hover &amp; Active</div>
-              <pre><code>const StateHoverActive = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    state=&quot;hover-active&quot;&gt;Hover &amp; Active&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">StateFocus</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Focus state - Keyboard navigation state Figma State: Focus</div>
-              <pre><code>const StateFocus = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    state=&quot;focus&quot;&gt;Focus State&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">StateDisabled</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Disabled state - Non-interactive state Figma State: Disabled</div>
-              <pre><code>const StateDisabled = () =&gt; &lt;Button
-    onClick={fn()}
-    darkMode={false}
-    variant=&quot;primary&quot;
-    size=&quot;medium&quot;
-    state=&quot;disabled&quot;&gt;Disabled State&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">AllStates</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">All states comparison for Primary variant</div>
-              <pre><code>const AllStates = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
-    &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot; state=&quot;default&quot;&gt;Default&lt;/Button&gt;
-      &lt;Button variant=&quot;primary&quot; state=&quot;hover-active&quot;&gt;Hover &amp; Active&lt;/Button&gt;
-      &lt;Button variant=&quot;primary&quot; state=&quot;focus&quot;&gt;Focus&lt;/Button&gt;
-      &lt;Button variant=&quot;primary&quot; state=&quot;disabled&quot;&gt;Disabled&lt;/Button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">DisabledStates</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Disabled state for all variants Figma State: Disabled</div>
-              <pre><code>const DisabledStates = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
-    &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
-      &lt;Button variant=&quot;primary&quot; state=&quot;disabled&quot;&gt;Primary Disabled&lt;/Button&gt;
-      &lt;Button variant=&quot;secondary&quot; state=&quot;disabled&quot;&gt;Secondary Disabled&lt;/Button&gt;
-      &lt;Button variant=&quot;ghost&quot; state=&quot;disabled&quot;&gt;Ghost Disabled&lt;/Button&gt;
-      &lt;Button variant=&quot;error&quot; state=&quot;disabled&quot;&gt;Error Disabled&lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot; state=&quot;disabled&quot;&gt;Outline Disabled&lt;/Button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">WithIconLeft</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Button with icon on the left Figma: Icon Left + Text</div>
-              <pre><code>const WithIconLeft = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;primary&quot; size=&quot;medium&quot;&gt;(&lt;&gt;
-      &lt;LucideIcons.Plus /&gt;Add Item
-            &lt;/&gt;)&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">WithIconRight</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Button with icon on the right Figma: Text + Icon Right</div>
-              <pre><code>const WithIconRight = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;outline&quot; size=&quot;medium&quot;&gt;(&lt;&gt;Download
-              &lt;LucideIcons.Download /&gt;
-    &lt;/&gt;)&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">WithIconBoth</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Button with icons on both sides Figma: Icon Left + Text + Icon Right</div>
-              <pre><code>const WithIconBoth = () =&gt; &lt;Button onClick={fn()} darkMode={false} variant=&quot;secondary&quot; size=&quot;medium&quot;&gt;(&lt;&gt;
-      &lt;LucideIcons.ArrowLeft /&gt;Navigate
-              &lt;LucideIcons.ArrowRight /&gt;
-    &lt;/&gt;)&lt;/Button&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">CommonPatterns</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Common button patterns with icons for different actions</div>
-              <pre><code>const CommonPatterns = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
-    &lt;div className=&quot;flex gap-3 flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        &lt;LucideIcons.Plus /&gt;
-        Add to Cart
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        &lt;LucideIcons.ShoppingCart /&gt;
-        Buy Now
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;secondary&quot;&gt;
-        &lt;LucideIcons.Heart /&gt;
-        Favorite
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        &lt;LucideIcons.Share2 /&gt;
-        Share
-      &lt;/Button&gt;
-    &lt;/div&gt;
-
-    &lt;div className=&quot;flex gap-3 flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        &lt;LucideIcons.Save /&gt;
-        Save
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        Cancel
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;error&quot;&gt;
-        &lt;LucideIcons.Trash2 /&gt;
-        Delete
-      &lt;/Button&gt;
-    &lt;/div&gt;
-
-    &lt;div className=&quot;flex gap-3 flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        &lt;LucideIcons.Download /&gt;
-        Download
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        &lt;LucideIcons.Upload /&gt;
-        Upload
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;ghost&quot;&gt;
-        &lt;LucideIcons.Edit /&gt;
-        Edit
-      &lt;/Button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">AllVariants</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Side-by-side comparison of all variants</div>
-              <pre><code>const AllVariants = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
-    &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;Primary&lt;/Button&gt;
-      &lt;Button variant=&quot;secondary&quot;&gt;Secondary&lt;/Button&gt;
-      &lt;Button variant=&quot;ghost&quot;&gt;Ghost&lt;/Button&gt;
-      &lt;Button variant=&quot;error&quot;&gt;Error&lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;Outline&lt;/Button&gt;
-    &lt;/div&gt;
-    &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-      &lt;Button variant=&quot;primary&quot; disabled&gt;Primary&lt;/Button&gt;
-      &lt;Button variant=&quot;secondary&quot; disabled&gt;Secondary&lt;/Button&gt;
-      &lt;Button variant=&quot;ghost&quot; disabled&gt;Ghost&lt;/Button&gt;
-      &lt;Button variant=&quot;error&quot; disabled&gt;Error&lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot; disabled&gt;Outline&lt;/Button&gt;
-    &lt;/div&gt;
+              <pre><code>const ButtonGroups = () =&gt; (
+  &lt;div className=&quot;flex gap-2 flex-wrap&quot;&gt;
+    &lt;Button variant=&quot;default&quot; &gt;Default&lt;/Button&gt;
+    &lt;Button variant=&quot;secondary&quot; &gt;Secondary&lt;/Button&gt;
+    &lt;Button variant=&quot;ghost&quot; &gt;Ghost&lt;/Button&gt;
+    &lt;Button variant=&quot;outline&quot; &gt;Outline&lt;/Button&gt;
+    &lt;Button variant=&quot;destructive&quot; &gt;Destructive&lt;/Button&gt;
+    &lt;Button variant=&quot;link&quot; &gt;Link&lt;/Button&gt;
   &lt;/div&gt;
 );</code></pre>
             </div>
@@ -1018,151 +708,18 @@ import * as LucideIcons from "lucide-react";</code></pre>
                 <span class="badge ok">story ok</span>
               </div>
               
-              <div class="hint">Side-by-side comparison of all sizes</div>
+              
               <pre><code>const AllSizes = () =&gt; (
-  &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
-    &lt;Button variant=&quot;primary&quot; size=&quot;mini&quot;&gt;Mini&lt;/Button&gt;
-    &lt;Button variant=&quot;primary&quot; size=&quot;small&quot;&gt;Small&lt;/Button&gt;
-    &lt;Button variant=&quot;primary&quot; size=&quot;medium&quot;&gt;Medium&lt;/Button&gt;
-    &lt;Button variant=&quot;primary&quot; size=&quot;large&quot;&gt;Large&lt;/Button&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">ArabicText</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Buttons with Arabic text (RTL support)</div>
-              <pre><code>const ArabicText = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot; dir=&quot;rtl&quot;&gt;
-    &lt;div className=&quot;flex gap-3&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        &lt;LucideIcons.Plus /&gt;
-        أضف إلى السلة
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;secondary&quot;&gt;
-        &lt;LucideIcons.Heart /&gt;
-        المفضلة
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        إلغاء
-      &lt;/Button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">ButtonGroups</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Button groups - Common layout patterns</div>
-              <pre><code>const ButtonGroups = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-6&quot;&gt;
-    &lt;div className=&quot;flex gap-2&quot;&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;Save&lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;Cancel&lt;/Button&gt;
-    &lt;/div&gt;
-
-    &lt;div className=&quot;flex gap-2&quot;&gt;
-      &lt;Button variant=&quot;error&quot;&gt;
-        &lt;LucideIcons.Trash2 /&gt;
-        Delete
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        &lt;LucideIcons.Edit /&gt;
-        Edit
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;ghost&quot;&gt;
-        &lt;LucideIcons.Copy /&gt;
-        Copy
-      &lt;/Button&gt;
-    &lt;/div&gt;
-
-    &lt;div className=&quot;flex gap-2 justify-between w-full max-w-md&quot;&gt;
-      &lt;Button variant=&quot;outline&quot;&gt;
-        &lt;LucideIcons.ChevronLeft /&gt;
-        Previous
-      &lt;/Button&gt;
-      &lt;Button variant=&quot;primary&quot;&gt;
-        Next
-        &lt;LucideIcons.ChevronRight /&gt;
-      &lt;/Button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">SizeMatrix</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Full size matrix - All combinations</div>
-              <pre><code>const SizeMatrix = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
-    {([&#39;primary&#39;, &#39;secondary&#39;, &#39;ghost&#39;, &#39;error&#39;, &#39;outline&#39;] as const).map((variant) =&gt; (
-      &lt;div key={variant} className=&quot;flex gap-3 items-center&quot;&gt;
-        &lt;span className=&quot;w-20 text-sm capitalize&quot;&gt;{variant}&lt;/span&gt;
-        &lt;Button variant={variant} size=&quot;mini&quot;&gt;Mini&lt;/Button&gt;
-        &lt;Button variant={variant} size=&quot;small&quot;&gt;Small&lt;/Button&gt;
-        &lt;Button variant={variant} size=&quot;medium&quot;&gt;Medium&lt;/Button&gt;
-        &lt;Button variant={variant} size=&quot;large&quot;&gt;Large&lt;/Button&gt;
-      &lt;/div&gt;
-    ))}
-  &lt;/div&gt;
-);</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">DarkModeComparison</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              <div class="hint">Dark mode comparison - All variants in light and dark themes Toggle the darkMode control to see the difference</div>
-              <pre><code>const DarkModeComparison = () =&gt; (
-  &lt;div className=&quot;flex flex-col gap-8&quot;&gt;
+  &lt;div className=&#39;flex flex-col gap-4&#39;&gt;
     &lt;div&gt;
-      &lt;h3 className=&quot;text-sm font-semibold mb-3 text-foreground&quot;&gt;Light Mode&lt;/h3&gt;
-      &lt;div className=&quot;flex flex-col gap-4 bg-[#f8f4f0] p-6 rounded-lg&quot;&gt;
-        &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-          &lt;Button variant=&quot;primary&quot;&gt;Primary&lt;/Button&gt;
-          &lt;Button variant=&quot;secondary&quot;&gt;Secondary&lt;/Button&gt;
-          &lt;Button variant=&quot;ghost&quot;&gt;Ghost&lt;/Button&gt;
-          &lt;Button variant=&quot;error&quot;&gt;Error&lt;/Button&gt;
-          &lt;Button variant=&quot;outline&quot;&gt;Outline&lt;/Button&gt;
-        &lt;/div&gt;
-        &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-          &lt;Button variant=&quot;primary&quot; state=&quot;disabled&quot;&gt;Primary&lt;/Button&gt;
-          &lt;Button variant=&quot;secondary&quot; state=&quot;disabled&quot;&gt;Secondary&lt;/Button&gt;
-          &lt;Button variant=&quot;ghost&quot; state=&quot;disabled&quot;&gt;Ghost&lt;/Button&gt;
-          &lt;Button variant=&quot;error&quot; state=&quot;disabled&quot;&gt;Error&lt;/Button&gt;
-          &lt;Button variant=&quot;outline&quot; state=&quot;disabled&quot;&gt;Outline&lt;/Button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+      &lt;Button size=&quot;sm&quot;&gt;Small&lt;/Button&gt;
+      &lt;Button size=&quot;default&quot;&gt;Default&lt;/Button&gt;
+      &lt;Button size=&quot;lg&quot;&gt;Large&lt;/Button&gt;
     &lt;/div&gt;
-
-    &lt;div className=&quot;dark&quot;&gt;
-      &lt;h3 className=&quot;text-sm font-semibold mb-3 text-foreground&quot;&gt;Dark Mode&lt;/h3&gt;
-      &lt;div className=&quot;flex flex-col gap-4 bg-[#0c1116] p-6 rounded-lg&quot;&gt;
-        &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-          &lt;Button variant=&quot;primary&quot;&gt;Primary&lt;/Button&gt;
-          &lt;Button variant=&quot;secondary&quot;&gt;Secondary&lt;/Button&gt;
-          &lt;Button variant=&quot;ghost&quot;&gt;Ghost&lt;/Button&gt;
-          &lt;Button variant=&quot;error&quot;&gt;Error&lt;/Button&gt;
-          &lt;Button variant=&quot;outline&quot;&gt;Outline&lt;/Button&gt;
-        &lt;/div&gt;
-        &lt;div className=&quot;flex gap-3 items-center flex-wrap&quot;&gt;
-          &lt;Button variant=&quot;primary&quot; state=&quot;disabled&quot;&gt;Primary&lt;/Button&gt;
-          &lt;Button variant=&quot;secondary&quot; state=&quot;disabled&quot;&gt;Secondary&lt;/Button&gt;
-          &lt;Button variant=&quot;ghost&quot; state=&quot;disabled&quot;&gt;Ghost&lt;/Button&gt;
-          &lt;Button variant=&quot;error&quot; state=&quot;disabled&quot;&gt;Error&lt;/Button&gt;
-          &lt;Button variant=&quot;outline&quot; state=&quot;disabled&quot;&gt;Outline&lt;/Button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+    &lt;div&gt;
+      &lt;Button size=&quot;icon&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon&lt;/Button&gt;
+      &lt;Button size=&quot;icon-sm&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon Small&lt;/Button&gt;
+      &lt;Button size=&quot;icon-lg&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon Large&lt;/Button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 );</code></pre>
@@ -1317,7 +874,7 @@ suffix?: keyof typeof Icons</code></pre>
         <label for="c-3-layout-card-stories" class="badge ok as-toggle">3 stories</label>
       </div>
     </div>
-    <div class="meta" title="./src/stories/Card.stories.tsx">layout-card · ./src/stories/Card.stories.tsx</div>
+    <div class="meta" title="./src/stories/layouts/Card.stories.tsx">layout-card · ./src/stories/layouts/Card.stories.tsx</div>
     
     <div class="hint">Primary UI component for user interaction</div>
     
@@ -1439,147 +996,6 @@ mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</cod
 <article
   class="card 
   no-error 
-  no-info 
-  no-story-error"
-  role="listitem"
-  aria-label="Card">
-  <div class="head">
-    <div class="title">
-      <h2><span class="status-dot dot-ok"></span> Card</h2>
-      <div class="badges">
-        <label for="c-4-use-cases-authcard-props" class="badge ok as-toggle">5 prop types</label>
-        
-        <label for="c-4-use-cases-authcard-stories" class="badge ok as-toggle">1 story</label>
-      </div>
-    </div>
-    <div class="meta" title="./src/stories/UseCases/AuthCard.stories.tsx">use-cases-authcard · ./src/stories/UseCases/AuthCard.stories.tsx</div>
-    
-    <div class="hint">Primary UI component for user interaction</div>
-    
-  </div>
-
-  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  
-  
-  <input id="c-4-use-cases-authcard-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-4-use-cases-authcard-props" class="tg tg-props" type="checkbox" hidden />
-
-  <div class="panels">
-    
-    
-    
-        <div class="panel panel-props">
-          <div class="note ok">
-            <div class="row">
-              <span class="ex-name">Prop types</span>
-              <span class="badge ok">5 prop types</span>
-            </div>
-            <pre><code>Component: src/packages/ui/Card.tsx::default</code></pre>
-            <pre><code>Props:</code></pre>
-            <pre><code>/**
- * Content of the card
- */
-children: React.ReactNode
-
-/**
- * Additional class name for the card
- */
-className?: string
-
-/**
- * Footer text to display at the bottom of the card
- */
-footer?: React.ReactNode
-
-/**
- * Additional class name for the footer
- */
-footerClassName?: string
-
-/**
- * Mosaic pattern position: &#39;left&#39;, &#39;right&#39;, or &#39;none&#39;
- */
-mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</code></pre>
-          </div>
-        </div>
-    
-        <div class="panel panel-stories">
-          
-          
-          
-          <div class="note ok">
-                <div class="row">
-                  <span class="ex-name">Imports</span>
-                </div>
-                <pre><code>import { Button, Card, GoogleLoginButton, Input, Switch } from "app.hanout.cc";</code></pre>
-              </div>
-          
-          
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Primary</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const Primary = () =&gt; {
-    const [value, setValue] = useState(&#39;sign-in&#39;);
-
-    return (
-        &lt;Card
-            footer=&quot;© 2026 حانوت. جميع الحقوق محفوظة.&quot;
-            mosaic={value === &#39;sign-in&#39; ? &#39;left&#39; : &#39;right&#39;}&gt;
-            &lt;Switch
-                items={[{ label: &#39;Sign In&#39;, value: &#39;sign-in&#39; }, { label: &#39;Sign Up&#39;, value: &#39;sign-up&#39; }]}
-                value={value}
-                onValueChange={setValue} /&gt;
-            &lt;div
-                className=&quot;py-4 w-full max-w-2xl flex justify-start flex-col items-center px-40&quot;&gt;
-                &lt;div className=&quot;text-header text-center&quot;&gt;
-                    &lt;span&gt;{value === &#39;sign-in&#39; ? &quot;Sign In&quot; : &quot;Sign Up&quot;}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div className=&quot;text-body text-center text-primary&quot;&gt;
-                    &lt;span&gt;{value === &#39;sign-in&#39; ? &quot;Welcome back&quot; : &quot;Create an account&quot;}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;br /&gt;
-                &lt;form className=&quot;w-full flex flex-col gap-4&quot;&gt;
-                    &lt;div className=&quot;text-body text-start text-[#6F7A93]&quot;&gt;
-                        &lt;span&gt;Easily sign in using just your phone number in just two steps!&lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;Input id=&quot;email&quot; placeholder=&quot;Email&quot; label=&quot;Email&quot; type=&quot;email&quot; required /&gt;
-                    &lt;Input
-                        id=&quot;password&quot;
-                        placeholder=&quot;Password&quot;
-                        label=&quot;Password&quot;
-                        type=&quot;password&quot;
-                        icon=&quot;eye&quot;
-                        error=&quot;Password is required&quot;
-                        required /&gt;
-                    &lt;Button type=&quot;button&quot; variant=&quot;secondary&quot; suffixIcon=&#39;arrow-right&#39;&gt;Continue
-                                  &lt;/Button&gt;
-                    {/* - OR - */}
-                    &lt;div className=&quot;flex items-center justify-center gap-2 w-full&quot;&gt;
-                        &lt;div className=&quot;w-full h-[1.5px] bg-[#2266D3]&quot; /&gt;
-                        &lt;span className=&quot;px-2 text-[#2266D3] font-medium&quot;&gt;OR&lt;/span&gt;
-                        &lt;div className=&quot;w-full h-[1.5px] bg-[#2266D3]&quot; /&gt;
-                    &lt;/div&gt;
-                    {/* Google Button */}
-                    &lt;GoogleLoginButton signup={value === &#39;sign-up&#39;} onClick={() =&gt; { }} /&gt;
-                    &lt;Button type=&quot;button&quot; variant=&quot;secondary&quot; prefixIcon=&#39;email&#39;&gt;
-                        {value === &#39;sign-in&#39; ? &quot;Sign Up with Email&quot; : &quot;Sign Up with Email&quot;}
-                    &lt;/Button&gt;
-                &lt;/form&gt;
-            &lt;/div&gt;
-        &lt;/Card&gt;
-    );
-};</code></pre>
-            </div>
-        </div>
-  </div>
-</article>
-<article
-  class="card 
-  no-error 
   has-info 
   no-story-error"
   role="listitem"
@@ -1588,9 +1004,9 @@ mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</cod
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Header</h2>
       <div class="badges">
-        <label for="c-5-example-header-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-5-example-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-example-header-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-4-example-header-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-4-example-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-4-example-header-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/example/Header.stories.ts">example-header · ./src/stories/example/Header.stories.ts</div>
@@ -1601,9 +1017,9 @@ mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</cod
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-example-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-example-header-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-5-example-header-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-4-example-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-4-example-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-4-example-header-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1671,6 +1087,94 @@ user?: {
               
               
               <pre><code>const LoggedOut = () =&gt; &lt;Header onLogin={fn()} onLogout={fn()} onCreateAccount={fn()}&gt;&lt;/Header&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="Link">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Link</h2>
+      <div class="badges">
+        <label for="c-5-components-buttons-link-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-5-components-buttons-link-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-components-buttons-link-stories" class="badge ok as-toggle">2 stories</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/buttons/Link.stories.tsx">components-buttons-link · ./src/stories/components/buttons/Link.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-5-components-buttons-link-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-components-buttons-link-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-components-buttons-link-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">3 prop types</span>
+            </div>
+            <pre><code>Component: src/packages/ui/Link.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>prefixIcon?: keyof typeof Icons
+
+suffixIcon?: keyof typeof Icons
+
+underline?: boolean</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Link } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Primary</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Primary = () =&gt; &lt;Link href=&quot;/&quot; prefixIcon={undefined} suffixIcon={undefined} underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">WithIcon</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithIcon = () =&gt; &lt;Link href=&quot;/&quot; prefixIcon=&quot;refresh&quot; suffixIcon={undefined} underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
             </div>
         </div>
   </div>
@@ -1759,12 +1263,12 @@ user?: {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-7-layout-switch-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-7-layout-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-layout-switch-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-7-components-buttons-switch-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-7-components-buttons-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-components-buttons-switch-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
-    <div class="meta" title="./src/stories/Switch.stories.tsx">layout-switch · ./src/stories/Switch.stories.tsx</div>
+    <div class="meta" title="./src/stories/components/buttons/Switch.stories.tsx">components-buttons-switch · ./src/stories/components/buttons/Switch.stories.tsx</div>
     
     
     
@@ -1772,9 +1276,9 @@ user?: {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-layout-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-layout-switch-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-7-layout-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-7-components-buttons-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-components-buttons-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-components-buttons-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1837,6 +1341,139 @@ value: string</code></pre>
             onValueChange={setValue} /&gt;
     );
 };</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="TextInput">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TextInput</h2>
+      <div class="badges">
+        <label for="c-8-components-fields-textinput-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-8-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/fields/TextInput.stories.tsx">components-fields-textinput · ./src/stories/components/fields/TextInput.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-8-components-fields-textinput-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-components-fields-textinput-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-components-fields-textinput-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src/packages/ui/TextInput.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>error?: string
+
+icon?: keyof typeof Icons
+
+id: string
+
+label?: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { TextInput } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Primary</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Primary = () =&gt; &lt;TextInput
+    id=&quot;input-id&quot;
+    label=&quot;Input Label&quot;
+    error={undefined}
+    icon={undefined}
+    required={false}
+    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Password</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Password = () =&gt; &lt;TextInput
+    id=&quot;input-id&quot;
+    label=&quot;Password&quot;
+    error={undefined}
+    icon=&quot;eye&quot;
+    required={false}
+    placeholder=&quot;••••••&quot;
+    type=&quot;password&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">WithIcon</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithIcon = () =&gt; &lt;TextInput
+    id=&quot;input-id&quot;
+    label=&quot;Input Label&quot;
+    error={undefined}
+    icon=&quot;email&quot;
+    required={false}
+    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">WithError</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithError = () =&gt; &lt;TextInput
+    id=&quot;input-id&quot;
+    label=&quot;Input Label&quot;
+    error=&quot;Error Message&quot;
+    icon={undefined}
+    required={false}
+    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
             </div>
         </div>
   </div>
