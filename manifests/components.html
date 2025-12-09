@@ -509,7 +509,7 @@
 <header>
   <div class="wrap">
     <h1>Components Manifest</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><span class="filter-pill ok" aria-disabled="true">9 components ok</span><a class="filter-pill info" data-k="infos" href="#filter-infos">6/9 infos</a><span class="filter-pill ok" aria-disabled="true">23 stories ok</span></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">1/13 prop type error</a><a class="filter-pill info" data-k="infos" href="#filter-infos">10/13 infos</a><span class="filter-pill ok" aria-disabled="true">29 stories ok</span></div>
   </div>
 </header>
 <main>
@@ -527,12 +527,12 @@
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> AuthCard</h2>
       <div class="badges">
-        <label for="c-0-docs-overview-use-cases-authcard-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-0-docs-overview-use-cases-authcard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-0-docs-overview-use-cases-authcard-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-0-elements-authcard-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-0-elements-authcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-0-elements-authcard-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
-    <div class="meta" title="./src/stories/use-cases/AuthCard.stories.tsx">docs-overview-use-cases-authcard · ./src/stories/use-cases/AuthCard.stories.tsx</div>
+    <div class="meta" title="./src/stories/elements/AuthCard.stories.tsx">elements-authcard · ./src/stories/elements/AuthCard.stories.tsx</div>
     
     
     
@@ -540,9 +540,9 @@
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-0-docs-overview-use-cases-authcard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-0-docs-overview-use-cases-authcard-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-0-docs-overview-use-cases-authcard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-0-elements-authcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-0-elements-authcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-0-elements-authcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -559,11 +559,13 @@
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">5 prop types</span>
+              <span class="badge ok">6 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/AuthCard.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>onGoogleSignIn: () =&gt; void
+            <pre><code>onForgotPassword: (email: string) =&gt; void
+
+onGoogleSignIn: () =&gt; void
 
 onRequestOTP: (phone: string, code: string) =&gt; Promise&lt;void&gt;
 
@@ -599,6 +601,7 @@ onSignUp: (email: string, password: string) =&gt; void</code></pre>
         &lt;AuthCard
             onSignIn={() =&gt; { }}
             onSignUp={() =&gt; { }}
+            onForgotPassword={() =&gt; { }}
             onGoogleSignIn={() =&gt; { }}
             onRequestOTP={async () =&gt; { }}
             onSignInWithPhone={() =&gt; { }} /&gt;
@@ -1097,14 +1100,255 @@ user?: {
   has-info 
   no-story-error"
   role="listitem"
+  aria-label="Icon">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Icon</h2>
+      <div class="badges">
+        <label for="c-5-components-icons-primary-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-5-components-icons-primary-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-components-icons-primary-stories" class="badge ok as-toggle">1 story</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/icons/icon.stories.tsx">components-icons-primary · ./src/stories/components/icons/icon.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-5-components-icons-primary-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-components-icons-primary-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-components-icons-primary-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src/packages/ui/Icons.tsx::Icon</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string | undefined
+
+name: keyof typeof Icons</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Icon } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Primary</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Primary = () =&gt; &lt;div
+    className=&quot;flex flex-col items-center gap-3 rounded-lg border border-border bg-background/60 p-4 text-center shadow-sm&quot;&gt;
+    &lt;span
+        className=&quot;rounded-md border border-dashed border-muted-foreground/40 p-3&quot;&gt;
+        &lt;Icon name=&quot;eye&quot; className={cn(&quot;size-6 text-foreground&quot;, args.className)} /&gt;
+    &lt;/span&gt;
+    &lt;code className=&quot;text-sm font-medium text-foreground&quot;&gt;{args.name}&lt;/code&gt;
+&lt;/div&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  has-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="IconOverview">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> IconOverview</h2>
+      <div class="badges">
+        <label for="c-6-components-icons-overview-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-6-components-icons-overview-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-components-icons-overview-stories" class="badge ok as-toggle">1 story</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/icons/Icons.stories.tsx">components-icons-overview · ./src/stories/components/icons/Icons.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-6-components-icons-overview-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-6-components-icons-overview-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-components-icons-overview-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">Prop type error</div>
+      <div class="note-body"><pre><code>No component file found for the &quot;IconOverview&quot; component.
+  56 | };
+  57 |
+&gt; 58 | const meta = {
+     | ^
+  59 |   title: &#39;Components/Icons/Overview&#39;,
+  60 |   tags: [&#39;components&#39;],
+  61 |   parameters: {
+
+./src/stories/components/icons/Icons.stories.tsx:
+import { useMemo, useState } from &#39;react&#39;;
+
+import type { Meta, StoryObj } from &#39;@storybook/nextjs-vite&#39;;
+
+import { Icon, ICON_NAMES, type IconName } from &#39;@/packages/ui/Icons&#39;;
+
+const IconOverview = () =&gt; {
+  const [query, setQuery] = useState(&#39;&#39;);
+  const normalizedQuery = query.trim().toLowerCase();
+
+  const filteredIcons = useMemo&lt;IconName[]&gt;(() =&gt; {
+    if (!normalizedQuery) {
+      return ICON_NAMES;
+    }
+
+    return ICON_NAMES.filter((iconName) =&gt; iconName.toLowerCase().includes(normalizedQuery));
+  }, [normalizedQuery]);
+
+  return (
+    &lt;div className=&quot;mx-auto flex w-full max-w-5xl flex-col gap-6 p-6&quot;&gt;
+      &lt;div className=&quot;flex flex-col gap-2&quot;&gt;
+        &lt;label className=&quot;text-sm font-medium text-muted-foreground&quot; htmlFor=&quot;icon-search&quot;&gt;
+          Search icons
+        &lt;/label&gt;
+        &lt;input
+          id=&quot;icon-search&quot;
+          type=&quot;text&quot;
+          value={query}
+          onChange={(event) =&gt; setQuery(event.target.value)}
+          placeholder=&quot;Try eye, arrow, refresh...&quot;
+          className=&quot;rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-primary&quot;
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div className=&quot;grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6&quot;&gt;
+        {filteredIcons.length ? (
+          filteredIcons.map((iconName) =&gt; (
+            &lt;div
+              key={iconName}
+              className=&quot;flex flex-col items-center gap-3 rounded-lg border border-border bg-background/60 p-4 text-center shadow-sm&quot;
+            &gt;
+              &lt;span className=&quot;rounded-md border border-dashed border-muted-foreground/40 p-3&quot;&gt;
+                &lt;Icon name={iconName} className=&quot;size-6 text-foreground&quot; /&gt;
+              &lt;/span&gt;
+              &lt;code className=&quot;text-sm font-medium text-foreground&quot;&gt;{iconName}&lt;/code&gt;
+            &lt;/div&gt;
+          ))
+        ) : (
+          &lt;p className=&quot;col-span-full text-center text-sm text-muted-foreground&quot;&gt;
+            No icons match &quot;{query}&quot;.
+          &lt;/p&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+const meta = {
+  title: &#39;Components/Icons/Overview&#39;,
+  tags: [&#39;components&#39;],
+  parameters: {
+    layout: &#39;fullscreen&#39;,
+  },
+  args: {
+    name: &#39;eye&#39;,
+  },
+  component: IconOverview,
+} satisfies Meta&lt;typeof IconOverview&gt;;
+
+export default meta;
+
+type Story = StoryObj&lt;typeof meta&gt;;
+
+export const Overview: Story = {
+  render: () =&gt; &lt;IconOverview /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Icon } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Overview</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Overview = () =&gt; &lt;IconOverview /&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
   aria-label="Link">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Link</h2>
       <div class="badges">
-        <label for="c-5-components-buttons-link-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-5-components-buttons-link-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-components-buttons-link-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-7-components-buttons-link-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-7-components-buttons-link-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-components-buttons-link-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/buttons/Link.stories.tsx">components-buttons-link · ./src/stories/components/buttons/Link.stories.tsx</div>
@@ -1115,9 +1359,9 @@ user?: {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-components-buttons-link-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-components-buttons-link-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-5-components-buttons-link-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-7-components-buttons-link-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-components-buttons-link-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-components-buttons-link-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1165,7 +1409,12 @@ underline?: boolean</code></pre>
               </div>
               
               
-              <pre><code>const Primary = () =&gt; &lt;Link href=&quot;/&quot; prefixIcon={undefined} suffixIcon={undefined} underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
+              <pre><code>const Primary = () =&gt; &lt;Link
+    href=&quot;/&quot;
+    target=&quot;_blank&quot;
+    prefixIcon={undefined}
+    suffixIcon={undefined}
+    underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1174,7 +1423,12 @@ underline?: boolean</code></pre>
               </div>
               
               
-              <pre><code>const WithIcon = () =&gt; &lt;Link href=&quot;/&quot; prefixIcon=&quot;refresh&quot; suffixIcon={undefined} underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
+              <pre><code>const WithIcon = () =&gt; &lt;Link
+    href=&quot;/&quot;
+    target=&quot;_blank&quot;
+    prefixIcon=&quot;refresh&quot;
+    suffixIcon={undefined}
+    underline={false}&gt;Link&lt;/Link&gt;;</code></pre>
             </div>
         </div>
   </div>
@@ -1191,8 +1445,8 @@ underline?: boolean</code></pre>
       <h2><span class="status-dot dot-ok"></span> Page</h2>
       <div class="badges">
         
-        <label for="c-6-example-page-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-example-page-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-8-example-page-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-example-page-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/example/Page.stories.ts">example-page · ./src/stories/example/Page.stories.ts</div>
@@ -1203,8 +1457,8 @@ underline?: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-6-example-page-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-example-page-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-example-page-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-example-page-stories" class="tg tg-stories" type="checkbox" hidden />
   
 
   <div class="panels">
@@ -1263,9 +1517,9 @@ underline?: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-7-components-buttons-switch-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-7-components-buttons-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-components-buttons-switch-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-9-components-buttons-switch-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-9-components-buttons-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-components-buttons-switch-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/buttons/Switch.stories.tsx">components-buttons-switch · ./src/stories/components/buttons/Switch.stories.tsx</div>
@@ -1276,9 +1530,9 @@ underline?: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-components-buttons-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-components-buttons-switch-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-7-components-buttons-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-9-components-buttons-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-components-buttons-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-9-components-buttons-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1356,9 +1610,9 @@ value: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInput</h2>
       <div class="badges">
-        <label for="c-8-components-fields-textinput-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-8-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-10-components-fields-textinput-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-10-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
+        <label for="c-10-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/fields/TextInput.stories.tsx">components-fields-textinput · ./src/stories/components/fields/TextInput.stories.tsx</div>
@@ -1369,9 +1623,9 @@ value: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-8-components-fields-textinput-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-components-fields-textinput-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-8-components-fields-textinput-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-10-components-fields-textinput-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-components-fields-textinput-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-10-components-fields-textinput-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1478,8 +1732,399 @@ label?: string</code></pre>
         </div>
   </div>
 </article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="TextInputOTP">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TextInputOTP</h2>
+      <div class="badges">
+        <label for="c-11-components-fields-textinputotp-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-11-components-fields-textinputotp-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-components-fields-textinputotp-stories" class="badge ok as-toggle">2 stories</label>
+      </div>
     </div>
+    <div class="meta" title="./src/stories/components/fields/TextInputOTP.stories.tsx">components-fields-textinputotp · ./src/stories/components/fields/TextInputOTP.stories.tsx</div>
     
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-11-components-fields-textinputotp-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-components-fields-textinputotp-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-components-fields-textinputotp-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">11 prop types</span>
+            </div>
+            <pre><code>Component: src/packages/ui/TextInputOTP.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+count: number
+
+disabled?: boolean
+
+error?: string
+
+id: string
+
+inputClassName?: string
+
+label?: string
+
+name?: string
+
+onChange: (value: string) =&gt; void
+
+required?: boolean
+
+value: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { TextInputOTP } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ControlledTemplate
+    id=&quot;otp-input&quot;
+    label=&quot;Verification Code&quot;
+    count={5}
+    error={undefined}
+    required
+    value=&quot;&quot;
+    onChange={() =&gt; { }} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">WithError</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithError = () =&gt; &lt;ControlledTemplate
+    id=&quot;otp-input&quot;
+    label=&quot;Verification Code&quot;
+    count={6}
+    error=&quot;Invalid verification code, please try again.&quot;
+    required
+    value=&quot;&quot;
+    onChange={() =&gt; { }} /&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="TextInputPhone">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TextInputPhone</h2>
+      <div class="badges">
+        <label for="c-12-components-fields-textinputphone-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-12-components-fields-textinputphone-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-components-fields-textinputphone-stories" class="badge ok as-toggle">2 stories</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/fields/TextInputPhone.stories.tsx">components-fields-textinputphone · ./src/stories/components/fields/TextInputPhone.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-12-components-fields-textinputphone-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-components-fields-textinputphone-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-12-components-fields-textinputphone-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: src/packages/ui/TextInputPhone.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>countries?: CountryOption[]
+
+error?: string
+
+id: string
+
+initialCountryCode?: string
+
+label?: string
+
+onCountryChange?: (country: CountryOption) =&gt; void</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { TextInputPhone } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ControlledTemplate
+    id=&quot;phone-input&quot;
+    label=&quot;Phone Number&quot;
+    placeholder=&quot;20 123 456&quot;
+    required={false}
+    error={undefined}
+    disabled={false} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">WithError</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithError = () =&gt; &lt;ControlledTemplate
+    id=&quot;phone-input&quot;
+    label=&quot;Phone Number&quot;
+    placeholder=&quot;20 123 456&quot;
+    required={false}
+    error=&quot;Please enter a valid phone number.&quot;
+    disabled={false} /&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+    </div>
+    <div class="error-groups" role="region" aria-label="Prop type error groups">
+        <section class="group">
+          <input id="no-component-import-found-toggle" class="group-tg" type="checkbox" hidden />
+          <label for="no-component-import-found-toggle" class="group-header">
+            <span class="caret">▸</span>
+            <span class="group-title">No component import found</span>
+            <span class="group-count">1</span>
+          </label>
+          <div class="group-cards">
+<article
+  class="card 
+  has-error 
+  has-info 
+  no-story-error"
+  role="listitem"
+  aria-label="IconOverview">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> IconOverview</h2>
+      <div class="badges">
+        <label for="c-error-0-components-icons-overview-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-error-0-components-icons-overview-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-0-components-icons-overview-stories" class="badge ok as-toggle">1 story</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/components/icons/Icons.stories.tsx">components-icons-overview · ./src/stories/components/icons/Icons.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-error-0-components-icons-overview-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-0-components-icons-overview-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-0-components-icons-overview-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">Prop type error</div>
+      <div class="note-body"><pre><code>No component file found for the &quot;IconOverview&quot; component.
+  56 | };
+  57 |
+&gt; 58 | const meta = {
+     | ^
+  59 |   title: &#39;Components/Icons/Overview&#39;,
+  60 |   tags: [&#39;components&#39;],
+  61 |   parameters: {
+
+./src/stories/components/icons/Icons.stories.tsx:
+import { useMemo, useState } from &#39;react&#39;;
+
+import type { Meta, StoryObj } from &#39;@storybook/nextjs-vite&#39;;
+
+import { Icon, ICON_NAMES, type IconName } from &#39;@/packages/ui/Icons&#39;;
+
+const IconOverview = () =&gt; {
+  const [query, setQuery] = useState(&#39;&#39;);
+  const normalizedQuery = query.trim().toLowerCase();
+
+  const filteredIcons = useMemo&lt;IconName[]&gt;(() =&gt; {
+    if (!normalizedQuery) {
+      return ICON_NAMES;
+    }
+
+    return ICON_NAMES.filter((iconName) =&gt; iconName.toLowerCase().includes(normalizedQuery));
+  }, [normalizedQuery]);
+
+  return (
+    &lt;div className=&quot;mx-auto flex w-full max-w-5xl flex-col gap-6 p-6&quot;&gt;
+      &lt;div className=&quot;flex flex-col gap-2&quot;&gt;
+        &lt;label className=&quot;text-sm font-medium text-muted-foreground&quot; htmlFor=&quot;icon-search&quot;&gt;
+          Search icons
+        &lt;/label&gt;
+        &lt;input
+          id=&quot;icon-search&quot;
+          type=&quot;text&quot;
+          value={query}
+          onChange={(event) =&gt; setQuery(event.target.value)}
+          placeholder=&quot;Try eye, arrow, refresh...&quot;
+          className=&quot;rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-primary&quot;
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div className=&quot;grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6&quot;&gt;
+        {filteredIcons.length ? (
+          filteredIcons.map((iconName) =&gt; (
+            &lt;div
+              key={iconName}
+              className=&quot;flex flex-col items-center gap-3 rounded-lg border border-border bg-background/60 p-4 text-center shadow-sm&quot;
+            &gt;
+              &lt;span className=&quot;rounded-md border border-dashed border-muted-foreground/40 p-3&quot;&gt;
+                &lt;Icon name={iconName} className=&quot;size-6 text-foreground&quot; /&gt;
+              &lt;/span&gt;
+              &lt;code className=&quot;text-sm font-medium text-foreground&quot;&gt;{iconName}&lt;/code&gt;
+            &lt;/div&gt;
+          ))
+        ) : (
+          &lt;p className=&quot;col-span-full text-center text-sm text-muted-foreground&quot;&gt;
+            No icons match &quot;{query}&quot;.
+          &lt;/p&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+const meta = {
+  title: &#39;Components/Icons/Overview&#39;,
+  tags: [&#39;components&#39;],
+  parameters: {
+    layout: &#39;fullscreen&#39;,
+  },
+  args: {
+    name: &#39;eye&#39;,
+  },
+  component: IconOverview,
+} satisfies Meta&lt;typeof IconOverview&gt;;
+
+export default meta;
+
+type Story = StoryObj&lt;typeof meta&gt;;
+
+export const Overview: Story = {
+  render: () =&gt; &lt;IconOverview /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Icon } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Overview</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Overview = () =&gt; &lt;IconOverview /&gt;;</code></pre>
+            </div>
+        </div>
+  </div>
+</article></div>
+        </section>
+      </div>
   </div>
 </main>
 </body>
