@@ -509,7 +509,7 @@
 <header>
   <div class="wrap">
     <h1>Components Manifest</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">1/13 prop type error</a><a class="filter-pill info" data-k="infos" href="#filter-infos">10/13 infos</a><span class="filter-pill ok" aria-disabled="true">29 stories ok</span></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">1/15 prop type error</a><a class="filter-pill info" data-k="infos" href="#filter-infos">12/15 infos</a><span class="filter-pill ok" aria-disabled="true">32 stories ok</span></div>
   </div>
 </header>
 <main>
@@ -622,7 +622,7 @@ onSignUp: (email: string, password: string) =&gt; void</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">2 prop types</label>
         
         <label for="c-1-components-buttons-button-stories" class="badge ok as-toggle">3 stories</label>
       </div>
@@ -647,17 +647,13 @@ onSignUp: (email: string, password: string) =&gt; void</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">4 prop types</span>
+              <span class="badge ok">2 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/Button.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
             <pre><code>prefixIcon?: keyof typeof Icons
 
-size?: &quot;default&quot; | &quot;sm&quot; | &quot;lg&quot; | &quot;icon&quot; | &quot;icon-sm&quot; | &quot;icon-lg&quot;
-
-suffixIcon?: keyof typeof Icons
-
-variant?: &quot;link&quot; | &quot;secondary&quot; | &quot;ghost&quot; | &quot;outline&quot; | &quot;destructive&quot; | &quot;default&quot;</code></pre>
+suffixIcon?: keyof typeof Icons</code></pre>
           </div>
         </div>
     
@@ -694,16 +690,44 @@ variant?: &quot;link&quot; | &quot;secondary&quot; | &quot;ghost&quot; | &quot;o
               </div>
               
               
-              <pre><code>const ButtonGroups = () =&gt; (
-  &lt;div className=&quot;flex gap-2 flex-wrap&quot;&gt;
-    &lt;Button variant=&quot;default&quot; &gt;Default&lt;/Button&gt;
-    &lt;Button variant=&quot;secondary&quot; &gt;Secondary&lt;/Button&gt;
-    &lt;Button variant=&quot;ghost&quot; &gt;Ghost&lt;/Button&gt;
-    &lt;Button variant=&quot;outline&quot; &gt;Outline&lt;/Button&gt;
-    &lt;Button variant=&quot;destructive&quot; &gt;Destructive&lt;/Button&gt;
-    &lt;Button variant=&quot;link&quot; &gt;Link&lt;/Button&gt;
-  &lt;/div&gt;
-);</code></pre>
+              <pre><code>const ButtonGroups = () =&gt; &lt;div className=&quot;flex flex-row gap-2 flex-wrap&quot;&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;default&quot;&gt;Default&lt;/Button&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;secondary&quot;&gt;Secondary&lt;/Button&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;ghost&quot;&gt;Ghost&lt;/Button&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;outline&quot;&gt;Outline&lt;/Button&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;destructive&quot;&gt;Destructive&lt;/Button&gt;
+    &lt;Button
+        size=&quot;default&quot;
+        prefixIcon={undefined}
+        suffixIcon={undefined}
+        disabled={false}
+        variant=&quot;link&quot;&gt;Link&lt;/Button&gt;
+&lt;/div&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -712,20 +736,33 @@ variant?: &quot;link&quot; | &quot;secondary&quot; | &quot;ghost&quot; | &quot;o
               </div>
               
               
-              <pre><code>const AllSizes = () =&gt; (
-  &lt;div className=&#39;flex flex-col gap-4&#39;&gt;
-    &lt;div&gt;
-      &lt;Button size=&quot;sm&quot;&gt;Small&lt;/Button&gt;
-      &lt;Button size=&quot;default&quot;&gt;Default&lt;/Button&gt;
-      &lt;Button size=&quot;lg&quot;&gt;Large&lt;/Button&gt;
+              <pre><code>const AllSizes = () =&gt; &lt;div className=&#39;flex flex-col gap-4&#39;&gt;
+    &lt;div className=&#39;flex flex-row gap-2&#39;&gt;
+        &lt;Button
+            variant=&quot;default&quot;
+            prefixIcon={undefined}
+            suffixIcon={undefined}
+            disabled={false}
+            size=&quot;sm&quot;&gt;Small&lt;/Button&gt;
+        &lt;Button
+            variant=&quot;default&quot;
+            prefixIcon={undefined}
+            suffixIcon={undefined}
+            disabled={false}
+            size=&quot;default&quot;&gt;Default&lt;/Button&gt;
+        &lt;Button
+            variant=&quot;default&quot;
+            prefixIcon={undefined}
+            suffixIcon={undefined}
+            disabled={false}
+            size=&quot;lg&quot;&gt;Large&lt;/Button&gt;
     &lt;/div&gt;
-    &lt;div&gt;
-      &lt;Button size=&quot;icon&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon&lt;/Button&gt;
-      &lt;Button size=&quot;icon-sm&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon Small&lt;/Button&gt;
-      &lt;Button size=&quot;icon-lg&quot; suffixIcon=&quot;arrow-right&quot;&gt;Icon Large&lt;/Button&gt;
+    &lt;div className=&#39;flex flex-row gap-2&#39;&gt;
+        &lt;Button variant=&quot;default&quot; disabled={false} size=&quot;icon-sm&quot; suffixIcon=&quot;user&quot; /&gt;
+        &lt;Button variant=&quot;default&quot; disabled={false} size=&quot;icon&quot; suffixIcon=&quot;store&quot; /&gt;
+        &lt;Button variant=&quot;default&quot; disabled={false} size=&quot;icon-lg&quot; suffixIcon=&quot;menu&quot; /&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
+&lt;/div&gt;;</code></pre>
             </div>
         </div>
   </div>
@@ -1002,14 +1039,110 @@ mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</cod
   has-info 
   no-story-error"
   role="listitem"
+  aria-label="CategoryButton">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> CategoryButton</h2>
+      <div class="badges">
+        <label for="c-4-elements-categorybutton-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-4-elements-categorybutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-4-elements-categorybutton-stories" class="badge ok as-toggle">2 stories</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/elements/CategoryButton.stories.tsx">elements-categorybutton · ./src/stories/elements/CategoryButton.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-4-elements-categorybutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-4-elements-categorybutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-4-elements-categorybutton-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">1 prop type</span>
+            </div>
+            <pre><code>Component: src/packages/ui/CategoryButton.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>categories: Category[]</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { CategoryButton, CategoryContent } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Primary</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Primary = () =&gt; {
+    return (
+        &lt;div className=&quot;w-full max-w-md&quot;&gt;
+            &lt;CategoryButton categories={mockCategories} /&gt;
+        &lt;/div&gt;
+    );
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">CategoryContentStory</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const CategoryContentStory = () =&gt; {
+    return (
+        &lt;div className=&quot;w-full max-w-md&quot;&gt;
+            &lt;CategoryContent categories={mockCategories} /&gt;
+        &lt;/div&gt;
+    );
+};</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
   aria-label="Header">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Header</h2>
       <div class="badges">
-        <label for="c-4-example-header-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-4-example-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-4-example-header-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-5-example-header-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-5-example-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-example-header-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/example/Header.stories.ts">example-header · ./src/stories/example/Header.stories.ts</div>
@@ -1020,9 +1153,9 @@ mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</cod
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-4-example-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-4-example-header-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-4-example-header-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-5-example-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-example-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-example-header-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1105,9 +1238,9 @@ user?: {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Icon</h2>
       <div class="badges">
-        <label for="c-5-components-icons-primary-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-5-components-icons-primary-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-components-icons-primary-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-6-components-icons-primary-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-6-components-icons-primary-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-components-icons-primary-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/icons/icon.stories.tsx">components-icons-primary · ./src/stories/components/icons/icon.stories.tsx</div>
@@ -1118,9 +1251,9 @@ user?: {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-components-icons-primary-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-components-icons-primary-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-5-components-icons-primary-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-6-components-icons-primary-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-components-icons-primary-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-6-components-icons-primary-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1189,9 +1322,9 @@ name: keyof typeof Icons</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> IconOverview</h2>
       <div class="badges">
-        <label for="c-6-components-icons-overview-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-6-components-icons-overview-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-components-icons-overview-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-7-components-icons-overview-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-7-components-icons-overview-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-components-icons-overview-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/icons/Icons.stories.tsx">components-icons-overview · ./src/stories/components/icons/Icons.stories.tsx</div>
@@ -1201,9 +1334,9 @@ name: keyof typeof Icons</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-6-components-icons-overview-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-6-components-icons-overview-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-components-icons-overview-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-components-icons-overview-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-7-components-icons-overview-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-components-icons-overview-stories" class="tg tg-stories" type="checkbox" hidden />
   
 
   <div class="panels">
@@ -1346,9 +1479,9 @@ export const Overview: Story = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Link</h2>
       <div class="badges">
-        <label for="c-7-components-buttons-link-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-7-components-buttons-link-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-components-buttons-link-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-8-components-buttons-link-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-8-components-buttons-link-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-components-buttons-link-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/buttons/Link.stories.tsx">components-buttons-link · ./src/stories/components/buttons/Link.stories.tsx</div>
@@ -1359,9 +1492,9 @@ export const Overview: Story = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-components-buttons-link-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-components-buttons-link-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-7-components-buttons-link-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-8-components-buttons-link-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-components-buttons-link-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-components-buttons-link-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1378,11 +1511,15 @@ export const Overview: Story = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">3 prop types</span>
+              <span class="badge ok">5 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/Link.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>prefixIcon?: keyof typeof Icons
+            <pre><code>className?: string
+
+iconClassName?: string
+
+prefixIcon?: keyof typeof Icons
 
 suffixIcon?: keyof typeof Icons
 
@@ -1439,14 +1576,91 @@ underline?: boolean</code></pre>
   has-info 
   no-story-error"
   role="listitem"
+  aria-label="Navbar">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Navbar</h2>
+      <div class="badges">
+        <label for="c-9-elements-navbar-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-9-elements-navbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-elements-navbar-stories" class="badge ok as-toggle">1 story</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/elements/Navbar.stories.tsx">elements-navbar · ./src/stories/elements/Navbar.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-9-elements-navbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-elements-navbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-9-elements-navbar-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types</span>
+              <span class="badge ok">1 prop type</span>
+            </div>
+            <pre><code>Component: src/packages/ui/Navbar.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>user?: any</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Navbar } from "app.hanout.cc";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Primary</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Primary = () =&gt; {
+    return &lt;Navbar user={undefined} /&gt;;
+};</code></pre>
+            </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error"
+  role="listitem"
   aria-label="Page">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Page</h2>
       <div class="badges">
         
-        <label for="c-8-example-page-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-example-page-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-10-example-page-info" class="badge info as-toggle">1 info</label>
+        <label for="c-10-example-page-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/example/Page.stories.ts">example-page · ./src/stories/example/Page.stories.ts</div>
@@ -1457,8 +1671,8 @@ underline?: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-8-example-page-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-example-page-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-10-example-page-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-example-page-stories" class="tg tg-stories" type="checkbox" hidden />
   
 
   <div class="panels">
@@ -1517,9 +1731,9 @@ underline?: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-9-components-buttons-switch-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-9-components-buttons-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-components-buttons-switch-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-11-components-buttons-switch-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-11-components-buttons-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-components-buttons-switch-stories" class="badge ok as-toggle">1 story</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/buttons/Switch.stories.tsx">components-buttons-switch · ./src/stories/components/buttons/Switch.stories.tsx</div>
@@ -1530,9 +1744,9 @@ underline?: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-9-components-buttons-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-9-components-buttons-switch-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-9-components-buttons-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-11-components-buttons-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-components-buttons-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-components-buttons-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1610,9 +1824,9 @@ value: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInput</h2>
       <div class="badges">
-        <label for="c-10-components-fields-textinput-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-10-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
-        <label for="c-10-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-12-components-fields-textinput-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-12-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/fields/TextInput.stories.tsx">components-fields-textinput · ./src/stories/components/fields/TextInput.stories.tsx</div>
@@ -1623,9 +1837,9 @@ value: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-10-components-fields-textinput-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-10-components-fields-textinput-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-10-components-fields-textinput-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-12-components-fields-textinput-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-components-fields-textinput-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-12-components-fields-textinput-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1642,17 +1856,25 @@ value: string</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">4 prop types</span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/TextInput.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
             <pre><code>error?: string
 
-icon?: keyof typeof Icons
-
 id: string
 
-label?: string</code></pre>
+label?: string
+
+labelIcon?: keyof typeof Icons
+
+onPrefixIconClick?: () =&gt; void
+
+onSuffixIconClick?: () =&gt; void
+
+prefixIcon?: keyof typeof Icons
+
+suffixIcon?: keyof typeof Icons</code></pre>
           </div>
         </div>
     
@@ -1679,9 +1901,11 @@ label?: string</code></pre>
     id=&quot;input-id&quot;
     label=&quot;Input Label&quot;
     error={undefined}
-    icon={undefined}
+    suffixIcon={undefined}
+    prefixIcon={undefined}
     required={false}
-    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
+    placeholder=&quot;Placeholder&quot;
+    disabled={false} /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1694,10 +1918,12 @@ label?: string</code></pre>
     id=&quot;input-id&quot;
     label=&quot;Password&quot;
     error={undefined}
-    icon=&quot;eye&quot;
+    suffixIcon=&quot;eye&quot;
+    prefixIcon={undefined}
     required={false}
     placeholder=&quot;••••••&quot;
-    type=&quot;password&quot; /&gt;;</code></pre>
+    type=&quot;password&quot;
+    disabled={false} /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1710,9 +1936,11 @@ label?: string</code></pre>
     id=&quot;input-id&quot;
     label=&quot;Input Label&quot;
     error={undefined}
-    icon=&quot;email&quot;
+    suffixIcon=&quot;email&quot;
+    prefixIcon={undefined}
     required={false}
-    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
+    placeholder=&quot;Placeholder&quot;
+    disabled={false} /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1725,9 +1953,11 @@ label?: string</code></pre>
     id=&quot;input-id&quot;
     label=&quot;Input Label&quot;
     error=&quot;Error Message&quot;
-    icon={undefined}
+    suffixIcon={undefined}
+    prefixIcon={undefined}
     required={false}
-    placeholder=&quot;Placeholder&quot; /&gt;;</code></pre>
+    placeholder=&quot;Placeholder&quot;
+    disabled={false} /&gt;;</code></pre>
             </div>
         </div>
   </div>
@@ -1743,9 +1973,9 @@ label?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInputOTP</h2>
       <div class="badges">
-        <label for="c-11-components-fields-textinputotp-props" class="badge ok as-toggle">11 prop types</label>
-        <label for="c-11-components-fields-textinputotp-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-components-fields-textinputotp-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-13-components-fields-textinputotp-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-13-components-fields-textinputotp-info" class="badge info as-toggle">1 info</label>
+        <label for="c-13-components-fields-textinputotp-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/fields/TextInputOTP.stories.tsx">components-fields-textinputotp · ./src/stories/components/fields/TextInputOTP.stories.tsx</div>
@@ -1756,9 +1986,9 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-11-components-fields-textinputotp-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-11-components-fields-textinputotp-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-11-components-fields-textinputotp-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-13-components-fields-textinputotp-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-13-components-fields-textinputotp-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-13-components-fields-textinputotp-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1861,9 +2091,9 @@ value: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInputPhone</h2>
       <div class="badges">
-        <label for="c-12-components-fields-textinputphone-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-12-components-fields-textinputphone-info" class="badge info as-toggle">1 info</label>
-        <label for="c-12-components-fields-textinputphone-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-14-components-fields-textinputphone-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-14-components-fields-textinputphone-info" class="badge info as-toggle">1 info</label>
+        <label for="c-14-components-fields-textinputphone-stories" class="badge ok as-toggle">2 stories</label>
       </div>
     </div>
     <div class="meta" title="./src/stories/components/fields/TextInputPhone.stories.tsx">components-fields-textinputphone · ./src/stories/components/fields/TextInputPhone.stories.tsx</div>
@@ -1874,9 +2104,9 @@ value: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-12-components-fields-textinputphone-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-12-components-fields-textinputphone-stories" class="tg tg-stories" type="checkbox" hidden />
-  <input id="c-12-components-fields-textinputphone-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-14-components-fields-textinputphone-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-14-components-fields-textinputphone-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-14-components-fields-textinputphone-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
