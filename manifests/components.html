@@ -622,7 +622,7 @@ onSignUp: (email: string, password: string) =&gt; void</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-1-components-buttons-button-props" class="badge ok as-toggle">4 prop types</label>
         
         <label for="c-1-components-buttons-button-stories" class="badge ok as-toggle">3 stories</label>
       </div>
@@ -647,11 +647,15 @@ onSignUp: (email: string, password: string) =&gt; void</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">2 prop types</span>
+              <span class="badge ok">4 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/Button.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>prefixIcon?: keyof typeof Icons
+            <pre><code>prefixClassName?: string
+
+prefixIcon?: keyof typeof Icons
+
+suffixClassName?: string
 
 suffixIcon?: keyof typeof Icons</code></pre>
           </div>
@@ -961,7 +965,7 @@ footerClassName?: string
 /**
  * Mosaic pattern position: &#39;left&#39;, &#39;right&#39;, or &#39;none&#39;
  */
-mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; = &#39;none&#39;</code></pre>
+mosaic?: &#39;left&#39; | &#39;right&#39; | &#39;none&#39; | &#39;bottom-left&#39; | &#39;bottom-right&#39; = &#39;none&#39;</code></pre>
           </div>
         </div>
     
@@ -1824,7 +1828,7 @@ value: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInput</h2>
       <div class="badges">
-        <label for="c-12-components-fields-textinput-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-12-components-fields-textinput-props" class="badge ok as-toggle">10 prop types</label>
         <label for="c-12-components-fields-textinput-info" class="badge info as-toggle">1 info</label>
         <label for="c-12-components-fields-textinput-stories" class="badge ok as-toggle">4 stories</label>
       </div>
@@ -1856,7 +1860,7 @@ value: string</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types</span>
-              <span class="badge ok">8 prop types</span>
+              <span class="badge ok">10 prop types</span>
             </div>
             <pre><code>Component: src/packages/ui/TextInput.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -1874,7 +1878,11 @@ onSuffixIconClick?: () =&gt; void
 
 prefixIcon?: keyof typeof Icons
 
-suffixIcon?: keyof typeof Icons</code></pre>
+prefixIconClassName?: string
+
+suffixIcon?: keyof typeof Icons
+
+suffixIconClassName?: string</code></pre>
           </div>
         </div>
     
